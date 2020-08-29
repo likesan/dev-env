@@ -6,6 +6,7 @@ yes |sudo apt-get install neovim
 # Install ZSH & ohmyzsh 
 yes | sudo apt-get install zsh  
 yes sudo apt-get install curl | yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+tail ./zshrc > cat > ./zshrc
 }
 
 git(){
@@ -14,6 +15,11 @@ git config --global user.email "sj-log@gmail.com"
 git config --global user.name "sj-log"
 git config credential.helper store
 git config --global credential.helper store
+}
+
+blog(){
+cd ~/coding
+git clone https://github.com/sj-log/hugo-blog
 }
 
 # Add basic setting 
