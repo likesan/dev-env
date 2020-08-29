@@ -13,7 +13,6 @@ git(){
 yes |sudo apt-get install git
 git config --global user.email "sj-log@gmail.com"
 git config --global user.name "sj-log"
-git config credential.helper store
 git config --global credential.helper store
 }
 
