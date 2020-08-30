@@ -2,14 +2,18 @@
 
 cmd=$1
 
+
+xset r rate 220 40
+echo "keyboard delay got faster"
+
 function ide()
 {
 
 	echo "install shell setting"
 	sudo apt-get install neovim 
 	sudo apt-get install zsh  
+	sudo apt-get install curl
 	sudo apt-get install curl | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-	tail ./zshrc > cat > ./zshrc
 }
 
 function git-init()
@@ -28,6 +32,7 @@ function blog()
 	echo "install kakao hugo blog"
 	cd ~/coding
 	git clone https://github.com/sj-log/hugo-blog
+	sudo apt-get install hugo
 }
 
 function katalk()
@@ -38,6 +43,14 @@ function katalk()
 	winecfg && 
 	cd ~/coding/kakaotalk-env && make get && make conf && make install
 }
+function browser(){
+
+wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add -
+sudo add-apt-repository 'deb https://repo.vivaldi.com/archive/deb/ stable main'
+sudo apt update && sudo apt install vivaldi-stable
+
+}
+
 
 case "$cmd" 
 in 
@@ -52,6 +65,16 @@ in
 		;;
 	katalk)
 		katalk
+		;;
+	browser)
+		browser
+		;;
+	all)
+		ide
+		git-init
+		blog
+		katalk
+		browser
 		;;
 	*)
 
