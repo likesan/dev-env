@@ -1,2 +1,3 @@
 # dev-env
-install zsh + setting ~/.zshrc 
+
+to lessen typings, to code faster, to high productivity.
