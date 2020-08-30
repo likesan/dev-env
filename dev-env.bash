@@ -3,8 +3,12 @@
 cmd=$1
 
 
+
 xset r rate 220 40
 echo "keyboard delay got faster"
+sudo apt-get install redshift
+echo "installed bluelight decreasing app"
+redshift -O 3000
 
 function ide()
 {
